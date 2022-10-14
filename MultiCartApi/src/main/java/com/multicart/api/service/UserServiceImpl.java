@@ -2,7 +2,7 @@ package com.multicart.api.service;
 
 import com.multicart.api.entities.User;
 import com.multicart.api.repository.UserRepository;
-import com.multicart.api.service.impl.UserService;
+import com.multicart.api.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
