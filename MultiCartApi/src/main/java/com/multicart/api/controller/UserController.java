@@ -1,6 +1,6 @@
 package com.multicart.api.controller;
 
-import com.multicart.api.Exception.UserNotFoundException;
+import com.multicart.api.exceptions.ResourceNotFoundException;
 import com.multicart.api.authentication.JwtUtility;
 import com.multicart.api.entities.User;
 import com.multicart.api.models.requestModels.JwtRequestModel;
@@ -8,12 +8,10 @@ import com.multicart.api.models.responseModels.JwtResponseModel;
 import com.multicart.api.service.UserDetailsServiceImpl;
 import com.multicart.api.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -56,10 +54,10 @@ public class UserController {
     }
 
     @GetMapping("/info/{userId}")
-    public User getUserInfo(@PathVariable Integer userId) throws UserNotFoundException {
+    public User getUserInfo(@PathVariable Integer userId) throws ResourceNotFoundException {
         User user = userService.getUser(userId);
         if(user == null){
-            throw new UserNotFoundException("User does not exists");
+            throw new ResourceNotFoundException("User does not exists");
         }
         return user;
     }

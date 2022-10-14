@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -26,4 +27,10 @@ public class User {
 
     @Column(name = "Password", nullable = false)
     private String password;
+
+    @Column(name = "Created", columnDefinition = "datetime default CURRENT_TIMESTAMP")
+    private Date created;
+
+    @Column(name = "Modified", columnDefinition = "datetime default CURRENT_TIMESTAMP")
+    private Date modified;
 }
