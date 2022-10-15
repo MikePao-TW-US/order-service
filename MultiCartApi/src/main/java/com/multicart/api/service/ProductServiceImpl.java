@@ -6,6 +6,7 @@ import com.multicart.api.service.interfaces.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +18,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product addNewProduct(Product product) {
+        product.setCreated(new Date());
+        product.setModified(new Date());
+        product.setDeleted(false);
         return productRepository.save(product);
     }
 
