@@ -8,28 +8,23 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "products")
+@Table(name = "cart")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+@IdClass(CartCompositeKey.class)
+public class Cart {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ProductId")
     private Integer productId;
 
-    @Column(name = "ProductName", nullable = false)
-    private String productName;
+    @Id
+    @Column(name = "UserId")
+    private Integer userId;
 
-    @Column(name = "ProductDescription", nullable = false)
-    private String productDescription;
-
-    @Column(name = "Price", nullable = false)
-    private Integer price;
-
-    @Column(name = "Image", nullable = false)
-    private String image;
+    @Column(name = "Quantity", nullable = false)
+    private Integer quantity;
 
     @Column(name = "Created", columnDefinition = "datetime default CURRENT_TIMESTAMP", nullable = false)
     private Date created;
@@ -37,6 +32,4 @@ public class Product {
     @Column(name = "Modified", columnDefinition = "datetime default CURRENT_TIMESTAMP", nullable = false)
     private Date modified;
 
-    @Column(name = "Deleted", columnDefinition = "tinyint default 0")
-    private Boolean deleted;
 }
