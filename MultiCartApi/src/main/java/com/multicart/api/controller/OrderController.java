@@ -1,5 +1,6 @@
 package com.multicart.api.controller;
 
+import com.multicart.api.entities.Order;
 import com.multicart.api.models.requestModels.OrderRequestModel;
 import com.multicart.api.models.responseModels.ResponseModel;
 import com.multicart.api.service.OrderServiceImpl;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/order")
@@ -24,5 +27,11 @@ public class OrderController {
             return new ResponseModel(null,"Order created successfully", HttpStatus.OK.value());
         }
         return new ResponseModel(null,"Error creating order", HttpStatus.INTERNAL_SERVER_ERROR.value());
+    }
+
+    @PostMapping("/get")
+    public List<Order> getAllOrders(@RequestBody OrderRequestModel requestModel){
+        List<Order> userOrders = orderService.getUserOrders(requestModel.getUserId());
+        return userOrders;
     }
 }

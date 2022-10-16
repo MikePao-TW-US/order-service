@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from '../model/product.model';
 
 const CART_API = 'http://localhost:9090/cart/';
 const httpOptions = {
@@ -41,5 +40,11 @@ export class CartService {
       productId,
       userId
     }, httpOptions);
+  }
+
+  emptyCart(userId:number):Observable<any>{
+    return this.http.post(CART_API + "empty",{
+      userId
+    },httpOptions);
   }
 }

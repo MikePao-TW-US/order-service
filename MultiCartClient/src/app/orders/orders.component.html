@@ -1,1 +1,27 @@
-<p>orders works!</p>
+<div class="shopping-cart">
+    <div class="title font-weight-bold">
+        My Orders
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <span class="font-weight-bold">Order Id</span>
+        </div>
+        <div class="col-sm-3">
+            <span class="font-weight-bold">Order Placed</span>
+        </div>
+        <div class="col-sm-3">
+            <span class="font-weight-bold">Status</span>
+        </div>
+        <div class="col-sm-2">
+            <span class="font-weight-bold">Order Total</span>
+        </div>
+    </div>
+
+    <app-order-item *ngFor="let item of userOrders" [order]="item">
+    </app-order-item>
+
+    <div class="title">
+        <a routerLink="/home"><input type="button" class="btn btn-info" value="Shop More"></a>
+    </div>
+</div>
