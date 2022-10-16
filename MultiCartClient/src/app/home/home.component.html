@@ -1,1 +1,4 @@
-<p>home works!</p>
+
+<div class="productsContainer">
+    <app-product *ngFor="let item of products; let i = index" [product]="item" class="product"></app-product>
+</div>
