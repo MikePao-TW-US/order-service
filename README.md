@@ -1,8 +1,8 @@
 # MultiCart : Spring Boot + Angular-14 + MySQL
 An ecommerce website built using Spring Boot as backend and Angular as frontend and MySQL DB as data source.
 
-Spring Boot project was generated with [Spring Initializr](https://start.spring.io/) version 2.7.4.
-Angular project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+- Spring Boot project was generated with [Spring Initializr](https://start.spring.io/) version 2.7.4.
+- Angular project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
 ## Functionalities
 
@@ -59,23 +59,23 @@ For Angular Project :
 
 ### Home Page:
 
-![Alt text](https://github.com/aman4411/multicart/blob/master/Screenshots/home.PNG "Home Page")
+![Home Page](https://github.com/aman4411/multicart/blob/master/Screenshots/home.png "Home Page")
 
 ### Signup Page:
 
-![Alt text](https://github.com/aman4411/multicart/blob/master/Screenshots/signup.PNG "Signup Page")
+![Signup Page](https://github.com/aman4411/multicart/blob/master/Screenshots/signup.png "Signup Page")
 
 ### Login Page:
 
-![Alt text](https://github.com/aman4411/multicart/blob/master/Screenshots/login.PNG "Login Page")
+![Login Page](https://github.com/aman4411/multicart/blob/master/Screenshots/login.png "Login Page")
 
 ### Cart Page:
 
-![Alt text](https://github.com/aman4411/multicart/blob/master/Screenshots/cart.PNG "Cart Page")
+![Cart Page](https://github.com/aman4411/multicart/blob/master/Screenshots/cart.png "Cart Page")
 
 ### Orders Page:
 
-![Alt text](https://github.com/aman4411/multicart/blob/master/Screenshots/login.PNG "Orders Page")
+![Orders Page](https://github.com/aman4411/multicart/blob/master/Screenshots/orders.png "Orders Page")
 
 ## Development server
 
