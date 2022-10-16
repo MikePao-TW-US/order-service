@@ -2,7 +2,6 @@ package com.multicart.api.repository;
 
 import com.multicart.api.entities.Cart;
 import com.multicart.api.entities.CartCompositeKey;
-import com.multicart.api.entities.Product;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;

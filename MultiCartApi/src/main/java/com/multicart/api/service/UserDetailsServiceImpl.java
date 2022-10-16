@@ -1,10 +1,7 @@
 package com.multicart.api.service;
 
-
-
 import com.multicart.api.entities.User;
 import com.multicart.api.repository.UserRepository;
-import com.sun.security.auth.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,6 +1,5 @@
 package com.multicart.api.controller;
 
-import com.multicart.api.entities.Product;
 import com.multicart.api.models.requestModels.CartRequestModel;
 import com.multicart.api.models.responseModels.CartProductResponseModel;
 import com.multicart.api.models.responseModels.ResponseModel;
