@@ -8,4 +8,6 @@ public interface UserService {
     User saveUser(User user);
 
     User getUser(Integer userId) throws ResourceNotFoundException;
+
+    User getUserByEmail(String email) throws ResourceNotFoundException;
 }

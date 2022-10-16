@@ -45,12 +45,13 @@ public class UserController {
                     )
             );
         }catch (BadCredentialsException e){
-            return new JwtResponseModel(null,"Bad Credentials");
+            return new JwtResponseModel(null,null,"Bad Credentials");
         }
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(requestModel.getUsername());
         final String jwtToken = jwtUtility.generateToken(userDetails);
-        return new JwtResponseModel(jwtToken,"Success");
+        final User user = userService.getUserByEmail(userDetails.getUsername());
+        return new JwtResponseModel(user,jwtToken,"Success");
     }
 
     @GetMapping("/info/{userId}")
