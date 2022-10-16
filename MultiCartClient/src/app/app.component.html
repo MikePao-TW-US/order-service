@@ -1,9 +1,9 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-info">
-    <a routerLink="#" class="navbar-brand">MultiCart</a>
+    <a routerLink="/home" class="navbar-brand">MultiCart</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item">
-        <a routerLink="/home" class="nav-link" routerLink="home">Home </a>
+        <a routerLink="/home" class="nav-link" routerLink="home" routerLinkActive="active">Home </a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
         <a routerLink="/admin" class="nav-link" routerLink="admin">Admin Board</a>
@@ -27,10 +27,10 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a routerLink="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        <a routerLink="/profile" class="nav-link" routerLink="profile">Hello {{ username }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="logout()">LogOut</a>
+        <a routerLink="" class="nav-link" (click)="logout()">Log Out</a>
       </li>
     </ul>
   </nav>
