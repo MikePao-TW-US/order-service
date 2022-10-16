@@ -1,11 +1,14 @@
 package com.multicart.api.controller;
 
 import com.multicart.api.models.requestModels.CartRequestModel;
+import com.multicart.api.models.responseModels.CartProductResponseModel;
 import com.multicart.api.models.responseModels.ResponseModel;
 import com.multicart.api.service.CartServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/cart")
@@ -21,6 +24,12 @@ public class CartController {
             return new ResponseModel<Integer>(null,"Product added to cart successfully", HttpStatus.OK.value());
         }
         return new ResponseModel<Integer>(null,"Error adding product to cart", HttpStatus.INTERNAL_SERVER_ERROR.value());
+    }
+
+    @PostMapping("/getProducts")
+    public ResponseModel getCartProducts(@RequestBody CartRequestModel requestModel){
+        List<CartProductResponseModel> cartProducts = cartService.getCartProducts(requestModel);
+        return new ResponseModel(cartProducts,"",HttpStatus.OK.value());
     }
 
     @PostMapping("/delete")

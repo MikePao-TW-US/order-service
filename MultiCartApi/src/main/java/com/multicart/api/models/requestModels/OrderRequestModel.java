@@ -1,6 +1,5 @@
 package com.multicart.api.models.requestModels;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.multicart.api.models.ProductItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;

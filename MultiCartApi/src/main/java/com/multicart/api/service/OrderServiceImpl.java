@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class OrderServiceImpl implements OrderService {
@@ -57,5 +58,10 @@ public class OrderServiceImpl implements OrderService {
             logger.error("Error creating order : " + e.getMessage());
             return false;
         }
+    }
+
+    @Override
+    public List<Order> getUserOrders(Integer userId) {
+        return orderRepository.findByUserId(userId);
     }
 }

@@ -12,6 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { ProductComponent } from './product/product.component';
+import { CartComponent } from './cart/cart.component';
+import { OrdersComponent } from './orders/orders.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { OrderItemComponent } from './order-item/order-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ProductComponent } from './product/product.component';
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-    ProductComponent
+    ProductComponent,
+    CartComponent,
+    OrdersComponent,
+    CartItemComponent,
+    OrderItemComponent
   ],
   imports: [
     BrowserModule,

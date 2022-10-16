@@ -1,0 +1,12 @@
+.row{
+    margin: 20px 10px;
+    display: flex;
+    background-color: #f7f7ff;
+    box-shadow: 5px 10px #f9f9ff;
+    align-items: center;
+    justify-content: center;
+}
+
+.col{
+    align-items: center;
+}

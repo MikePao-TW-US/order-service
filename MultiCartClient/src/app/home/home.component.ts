@@ -17,7 +17,9 @@ export class HomeComponent implements OnInit {
         this.products = data;
         console.log(this.products);
       },
-      err => { }
+      err => { 
+        console.log(err);
+      }
     );
   }
 
