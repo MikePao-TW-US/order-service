@@ -5,29 +5,26 @@
       <li class="nav-item">
         <a routerLink="/home" class="nav-link" routerLink="home" routerLinkActive="active">Home </a>
       </li>
-      <li class="nav-item" *ngIf="showAdminBoard">
-        <a routerLink="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-      </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a routerLink="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+      <li class="nav-item">
+        <a routerLink="/cart" class="nav-link" *ngIf="isLoggedIn">Cart</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        <a routerLink="/orders" class="nav-link" *ngIf="isLoggedIn">Orders</a>
       </li>
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a routerLink="/register" class="nav-link" routerLink="register">Sign Up</a>
+        <a routerLink="/register" class="nav-link">Sign Up</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/login" class="nav-link" routerLink="login">Login</a>
+        <a routerLink="/login" class="nav-link">Login</a>
       </li>
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a routerLink="/profile" class="nav-link" routerLink="profile">Hello {{ username }}</a>
+        <a routerLink="/profile" class="nav-link">Hello {{ username }}</a>
       </li>
       <li class="nav-item">
         <a routerLink="" class="nav-link" (click)="logout()">Log Out</a>

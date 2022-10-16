@@ -1,0 +1,17 @@
+<div class="shopping-cart">
+    <div class="title">
+        Shopping Bag
+    </div>
+
+    <app-cart-item *ngFor="let item of cartProducts" [product]="item.product" [quantity]="item.quantity">
+    </app-cart-item>
+
+    <div class="title">
+        Cart Total : <span class="text-danger font-weight-bold">{{cartTotal}}</span>
+    </div>
+
+    <div class="title">
+        <input type="button" class="btn btn-info" value="Place Order">
+    </div>
+
+</div>
