@@ -1,86 +1,55 @@
-<div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
-      <form
-        *ngIf="!isSuccessful"
-        name="form"
-        (ngSubmit)="f.form.valid && onSubmit()"
-        #f="ngForm"
-        novalidate
-      >
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            [(ngModel)]="form.username"
-            required
-            minlength="3"
-            maxlength="20"
-            #username="ngModel"
-          />
-          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-            <!-- <div *ngIf="username.errors.required">Username is required</div>
-            <div *ngIf="username.errors.minlength">
-              Username must be at least 3 characters
-            </div>
-            <div *ngIf="username.errors.maxlength">
-              Username must be at most 20 characters
-            </div> -->
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            [(ngModel)]="form.email"
-            required
-            email
-            #email="ngModel"
-          />
-          <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-            <!-- <div *ngIf="email.errors.required">Email is required</div>
-            <div *ngIf="email.errors.email">
-              Email must be a valid email address
-            </div> -->
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            [(ngModel)]="form.password"
-            required
-            minlength="6"
-            #password="ngModel"
-          />
-          <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-            <!-- <div *ngIf="password.errors.required">Password is required</div>
-            <div *ngIf="password.errors.minlength">
-              Password must be at least 6 characters
-            </div> -->
-          </div>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block">Sign Up</button>
-        </div>
-  
-        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-          Signup failed!<br />{{ errorMessage }}
-        </div>
-      </form>
-  
-      <div class="alert alert-success" *ngIf="isSuccessful">
-        Your registration is successful!
+<div class=" flex-r container">
+  <div class="flex-r login-wrapper">
+    <div class="login-text">
+      <div class="logo">
+        <span><i class="fab fa-speakap"></i></span>
+        <span> MultiCart</span>
       </div>
+      <h1>Sign Up</h1>
+      <p>Level up your shopping experience !! </p>
+
+      <form class="flex-c" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+        novalidate>
+
+        <div class="input-box">
+          <span class="label">Name</span>
+          <div class=" flex-r input">
+            <input name="username" type="text" placeholder="User"  [(ngModel)]="form.username" required minlength="3"
+            maxlength="20" #username="ngModel" >
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <span class="label">E-mail</span>
+          <div class=" flex-r input">
+            <input name="email" type="text" placeholder="name@abc.com" [(ngModel)]="form.email" required email
+            #email="ngModel" >
+            <i class="fas fa-at"></i>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <span class="label">Password</span>
+          <div class="flex-r input">
+            <input name="password" type="password" placeholder="8+ (a, A, 1, #)" [(ngModel)]="form.password" required minlength="6"
+            #password="ngModel">
+            <i class="fas fa-lock"></i>
+          </div>
+        </div>
+
+        <div class="check">
+          <input type="checkbox" name="" id="">
+          <span>I've read and agree with T&C</span>
+        </div>
+
+        <input class="btn" type="submit" value="Create an Account">
+        <span class="extra-line">
+          <span>Already have an account?</span>
+          <a routerLink="/login"> Sign In</a>
+        </span>
+      </form>
+
     </div>
   </div>
+</div>

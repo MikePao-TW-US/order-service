@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<!-- <div class="col-md-12">
     <div class="card card-container">
       <img
         id="profile-img"
@@ -46,10 +46,6 @@
             role="alert"
             *ngIf="f.submitted && password.invalid"
           >
-            <!-- <div *ngIf="password.errors.required">Password is required</div>
-            <div *ngIf="password.errors.minlength">
-              Password must be at least 6 characters
-            </div> -->
           </div>
         </div>
         <div class="form-group">
@@ -70,6 +66,53 @@
   
       <div class="alert alert-success" *ngIf="isLoggedIn">
         Logged in.
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class=" flex-r container">
+    <div class="flex-r login-wrapper">
+      <div class="login-text">
+        <div class="logo">
+          <span><i class="fab fa-speakap"></i></span>
+          <span> MultiCart</span>
+        </div>
+        <h1>Log In</h1>
+        <p>Level up your shopping experience !! </p>
+  
+        <form class="flex-c"*ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate>
+
+  
+          <div class="input-box">
+            <span class="label">E-mail</span>
+            <div class=" flex-r input">
+              <input name="email" type="text" placeholder="name@abc.com" [(ngModel)]="form.email" required email
+              #email="ngModel" >
+              <i class="fas fa-at"></i>
+            </div>
+          </div>
+  
+          <div class="input-box">
+            <span class="label">Password</span>
+            <div class="flex-r input">
+              <input name="password" type="password" placeholder="8+ (a, A, 1, #)" [(ngModel)]="form.password" required minlength="6"
+              #password="ngModel">
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+  
+          <input class="btn" type="submit" value="Shop Now">
+          <span class="extra-line">
+            <span>Don't have an account?</span>
+            <a routerLink="/register"> Sign Up</a>
+          </span>
+        </form>
+  
       </div>
     </div>
   </div>
