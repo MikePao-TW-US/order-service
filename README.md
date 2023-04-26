@@ -1,4 +1,4 @@
-# MultiCart : Spring Boot + Angular-14 + MySQL
+# Anavrin Store : Spring Boot + Angular-14 + MySQL
 An ecommerce website built using Spring Boot as backend and Angular as frontend and MySQL DB as data source.
 
 - Spring Boot project was generated with [Spring Initializr](https://start.spring.io/) version 2.7.4.
