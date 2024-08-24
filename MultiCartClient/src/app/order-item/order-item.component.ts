@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Order, OrderPlaced } from '../model/order.model';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Order, OrderPlaced  } from '../model/order.model';
+import { OrderService } from '../_services/order.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-order-item',
@@ -9,10 +12,15 @@ import { Order, OrderPlaced } from '../model/order.model';
 export class OrderItemComponent implements OnInit {
 
   @Input() order:OrderPlaced;
+  @Output() orderDeleted = new EventEmitter<number>();
   
-  constructor() { }
+  constructor(private orderService: OrderService, private tokenService: TokenStorageService) { }
 
   ngOnInit(): void {
   }
 
+  
+  deleteOrders(orderId: number): Observable<void> {
+    return this.orderService.deleteOrder(orderId)
+  }
 }

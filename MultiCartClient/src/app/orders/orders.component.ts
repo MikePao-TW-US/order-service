@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Order, OrderPlaced } from '../model/order.model';
+import { OrderPlaced } from '../model/order.model';
 import { User } from '../model/user.model';
+import { Observable } from 'rxjs';
 import { OrderService } from '../_services/order.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -13,7 +14,7 @@ export class OrdersComponent implements OnInit {
 
   isLoggedIn:boolean = false;
   user:User;
-  userOrders:OrderPlaced[];
+  userOrders$: Observable<OrderPlaced[]>;  // Observable of orders
 
   constructor(private orderService: OrderService, private tokenService: TokenStorageService) { }
 
@@ -25,16 +26,14 @@ export class OrdersComponent implements OnInit {
     this.getAllOrders(this.user.userId);
   }
 
-  getAllOrders(userId:number):any{
-    this.orderService.getAllOrders(userId).subscribe(
-      data => {
-        this.userOrders = data;
-        console.log(this.userOrders);
-      },
-      err => {
-        console.log(err);
-      }
-    )
+  getAllOrders(userId: number): Observable<OrderPlaced[]> {
+    return this.orderService.getAllOrders(userId);
+  }
+
+  deleteOrders(orderId: number, ref: HTMLElement) {
+    this.orderService.deleteOrder(orderId).subscribe(() => {
+      ref.remove();
+    });
   }
 
 }

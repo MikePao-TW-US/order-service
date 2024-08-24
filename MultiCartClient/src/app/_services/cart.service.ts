@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const CART_API = 'http://localhost:9090/cart/';
+const CART_API = 'http://localhost:8080/cart';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -15,20 +15,18 @@ export class CartService {
   constructor(private http: HttpClient) { }
 
   addProductToCart(productId:number,userId:number): Observable<any>{
-      return this.http.post(CART_API + 'add',{
+      return this.http.post(CART_API,{
         productId,
         userId
       }, httpOptions);
   }
 
   getCartProducts(userId:number): Observable<any>{
-    return this.http.post(CART_API + "getProducts",{
-      userId
-    }, httpOptions);
+    return this.http.get(CART_API+"/"+userId);
   }
 
   updateCartProduct(productId:number,userId:number,quantity:number):Observable<any>{
-    return this.http.post(CART_API + "update",{
+    return this.http.put(CART_API,{
       productId,
       userId,
       quantity
@@ -36,14 +34,11 @@ export class CartService {
   }
 
   deleteProductFromCart(productId:number,userId:number):Observable<any>{
-    return this.http.post(CART_API + "delete",{
-      productId,
-      userId
-    }, httpOptions);
+    return this.http.delete(CART_API+"/"+userId+"/"+productId);
   }
 
   emptyCart(userId:number):Observable<any>{
-    return this.http.post(CART_API + "empty",{
+    return this.http.post(CART_API + "/empty",{
       userId
     },httpOptions);
   }

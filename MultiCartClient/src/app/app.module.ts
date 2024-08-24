@@ -16,6 +16,8 @@ import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { OrderItemComponent } from './order-item/order-item.component';
+import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { OrderItemComponent } from './order-item/order-item.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CustomerDashboardModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

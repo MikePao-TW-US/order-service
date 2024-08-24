@@ -35,12 +35,13 @@ export class CartComponent implements OnInit {
   }
 
   loadCart(){
+    console.log(this.user);
+    console.log(this.user.userId);
     this.cartService.getCartProducts(this.user.userId).subscribe(
       data => {
         if(data.code == 200){
           this.cartProducts = data.data;
           this.calculateCartTotal();
-          console.log(this.cartProducts);
         }else{
           console.log("API code not 200");
         }

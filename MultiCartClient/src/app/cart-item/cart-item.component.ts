@@ -20,6 +20,7 @@ export class CartItemComponent implements OnInit {
   constructor(private cartService: CartService, private tokenService: TokenStorageService) { }
 
   ngOnInit(): void {
+    // console.log("Hi");
     this.isLoggedIn = !!this.tokenService.getToken();
     if(this.isLoggedIn){
       this.user = this.tokenService.getUser();

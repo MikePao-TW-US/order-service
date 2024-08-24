@@ -5,7 +5,7 @@
         <span>{{order.orderId}}</span>
     </div>
     <div class="col-sm-3">
-        <span>{{order.created}}</span>
+        <span>{{order.created| date:'long'}}</span>
     </div>
     <div class="col-sm-3">
         <span class="text-success font-weight-bold">{{order.status}}</span>
@@ -14,6 +14,7 @@
         <span class="text-danger font-weight-bold">{{order.total}}</span>
     </div>
     <div class="col-sm-2">
-        <input type="button" class="btn btn-danger" value="Cancel">
+        <!-- <input type="button" class="btn btn-danger" value="Cancel"> -->
+        <input type="button" class="btn btn-danger" value="Cancel" (click)="deleteOrders(order.orderId)">
     </div>
 </div>
