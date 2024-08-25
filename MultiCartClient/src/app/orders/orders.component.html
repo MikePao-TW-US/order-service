@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <app-order-item *ngFor="let item of (userOrders$ | async)"  [order]="item"  (click)="deleteOrders(item.orderId, ref)" #ref>
+    <app-order-item *ngFor="let item of (userOrders$ | async)"  [order]="item"  (orderDeleted)="onOrderDeleted()">
     </app-order-item>
 
     <div class="title">

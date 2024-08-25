@@ -23,17 +23,21 @@ export class OrdersComponent implements OnInit {
     if(this.isLoggedIn){
       this.user = this.tokenService.getUser();
     }
-    this.getAllOrders(this.user.userId);
+    this.userOrders$ = this.getAllOrders(this.user.userId);
   }
 
   getAllOrders(userId: number): Observable<OrderPlaced[]> {
     return this.orderService.getAllOrders(userId);
   }
 
-  deleteOrders(orderId: number, ref: HTMLElement) {
+  deleteOrders(orderId: number) {
     this.orderService.deleteOrder(orderId).subscribe(() => {
-      ref.remove();
+      this.userOrders$ = this.getAllOrders(this.user.userId);
     });
+  }
+
+  onOrderDeleted(): void {
+    this.userOrders$ = this.getAllOrders(this.user.userId); // Refresh the orders list
   }
 
 }

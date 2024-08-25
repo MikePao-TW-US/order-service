@@ -20,7 +20,17 @@ export class OrderItemComponent implements OnInit {
   }
 
   
-  deleteOrders(orderId: number): Observable<void> {
-    return this.orderService.deleteOrder(orderId)
+  deleteOrders(orderId: number): void {
+    this.orderService.deleteOrder(orderId).subscribe({
+      next: () => {
+        this.orderDeleted.emit(orderId); // Emit the event after the order is deleted
+      },
+      error: (err) => {
+        console.error("Failed to delete order", err);
+      },
+      complete: () => {
+        console.log("Delete operation completed");
+      }
+    });
   }
 }
