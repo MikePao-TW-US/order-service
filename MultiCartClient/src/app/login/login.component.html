@@ -1,0 +1,119 @@
+<!-- <div class="col-md-12">
+    <div class="card card-container">
+      <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        alt = "profile"
+        class="profile-img-card"
+      />
+      <form
+        *ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && username.invalid"
+          >
+            Username is required!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && password.invalid"
+          >
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">
+            Login
+          </button>
+        </div>
+        <div class="form-group">
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && isLoginFailed"
+          >
+            Login failed: {{ errorMessage }}
+          </div>
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isLoggedIn">
+        Logged in.
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class=" flex-r container">
+    <div class="flex-r login-wrapper">
+      <div class="login-text">
+        <div class="logo">
+          <span><i class="fab fa-speakap"></i></span>
+          <span> Rothur Online Shopping</span>
+        </div>
+        <h1>Log In</h1>
+        <p>Level up your shopping experience !! </p>
+  
+        <form class="flex-c"*ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate>
+
+  
+          <div class="input-box">
+            <span class="label">E-mail</span>
+            <div class=" flex-r input">
+              <input name="email" type="text" placeholder="name@abc.com" [(ngModel)]="form.email" required email
+              #email="ngModel" >
+              <i class="fas fa-at"></i>
+            </div>
+          </div>
+  
+          <div class="input-box">
+            <span class="label">Password</span>
+            <div class="flex-r input">
+              <input name="password" type="password" placeholder="8+ (a, A, 1, #)" [(ngModel)]="form.password" required minlength="6"
+              #password="ngModel">
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+  
+          <input class="btn" type="submit" value="Shop Now">
+          <span class="extra-line">
+            <span>Don't have an account?</span>
+            <a routerLink="/register"> Sign Up</a>
+          </span>
+        </form>
+  
+      </div>
+    </div>
+  </div>

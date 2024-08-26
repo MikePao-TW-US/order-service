@@ -1,0 +1,26 @@
+<div class="col hp">
+    <div class="card h-100 shadow-sm">
+        <a href="#">
+            <img src={{product.image}} class="card-img-top"
+                alt="product.title" />
+        </a>
+
+        <div class="card-body">
+            <h4 class="card-title">
+                <a target="_blank" href="#">{{product.productName}}</a>
+            </h4>
+            <div class="clearfix mb-3">
+                <span class="float-start badge-sm badge-pill badge-danger">&#x20b9; {{product.price}}</span>
+            </div>
+            <h5 class="card-title">
+                <a target="_blank" href="#">{{product.productDescription}}</a>
+            </h5>
+
+            <div class="d-grid gap-2 my-4">
+
+                <a routerLink="" class="btn btn-info bold-btn" (click)="addToCart(product.productId)">add to cart</a>
+
+            </div>
+        </div>
+    </div>
+</div>

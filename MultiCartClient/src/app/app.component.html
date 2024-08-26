@@ -1,0 +1,40 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-info">
+    <a routerLink="/home" class="navbar-brand">Rothur Online Shooping</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a routerLink="/home" class="nav-link" routerLink="home" routerLinkActive="active">Home </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/cart" class="nav-link" *ngIf="isLoggedIn">Cart</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/orders" class="nav-link" *ngIf="isLoggedIn">Orders</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a routerLink="/register" class="nav-link">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a routerLink="/profile" class="nav-link">Hello {{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="" class="nav-link" (click)="logout()">Log Out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- <app-customer-dashboard></app-customer-dashboard> -->
+</div>
+

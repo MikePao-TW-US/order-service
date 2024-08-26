@@ -1,0 +1,28 @@
+<!-- Product #1 -->
+<div class="item">
+    <div class="buttons">
+        <span class="delete-btn" (click)="deleteProductFromCart(product.productId,user.userId)"></span>
+        <span class="like-btn"></span>
+    </div>
+
+    <div class="image">
+        <img src={{product.image}} alt="product" style="height: 60px;"/>
+    </div>
+
+    <div class="col-sm-6 description">
+        <h6>{{product.productName}}</h6>
+        {{product.productDescription}}
+    </div>
+
+    <div class="quantity">
+        <button class="minus-btn" type="button" name="button" (click)="decreaseQuantity(product.productId, user.userId)">
+            <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+        <input disabled type="number" name="name" [value]="quantity">
+        <button class="plus-btn" type="button" name="button" (click)="increaseQuantity(product.productId,user.userId)">
+            <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+    </div>
+
+    <div class="total-price text-danger font-weight-bold">&#x20b9; {{product.price * quantity}}</div>
+</div>
