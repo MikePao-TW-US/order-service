@@ -26,7 +26,7 @@
                 },
                 {
                     "name": "DB_URL",
-                    "value": "jdbc:postgresql:user-management.cn4a2uuwcav1.us-west-2.rds.amazonaws.com:5432/user-management"
+                    "value": "jdbc:postgresql://user-management.cn4a2uuwcav1.us-west-2.rds.amazonaws.com:5432/user_management"
                 },
                 {
                     "name": "DB_PASSWORD",
