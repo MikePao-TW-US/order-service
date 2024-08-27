@@ -20,7 +20,7 @@ jobs:
     
       - name: Build Project
         run: |
-          cd order-service/orderservice
+          cd orderservice
           mvn clean install -DskipTests
 
       - name: Configure AWS credentials
