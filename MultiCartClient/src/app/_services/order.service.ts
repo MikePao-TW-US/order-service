@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Order } from '../model/order.model';
 
-const ORDER_API = 'http://localhost:8080/order';
+const ORDER_API = 'http://35.86.195.130:8080/order';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
