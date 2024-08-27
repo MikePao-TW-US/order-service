@@ -6,6 +6,7 @@ public interface Const {
         String IN_TRANSIT = "In Transit";
         String DELIVERED = "Delivred";
         String CANCELLED = "Cancelled";
-    }
+        String X = "X";
+}
 }
 
