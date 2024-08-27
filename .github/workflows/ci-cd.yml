@@ -9,12 +9,15 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v3
 
+      - name: List directory contents
+        run: ls -R
+
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
-
+    
       - name: Build Project
         run: |
           cd order-service/orderservice
